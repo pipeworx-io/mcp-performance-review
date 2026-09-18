@@ -77,3 +77,13 @@ The gateway picks the right tool and fills the arguments automatically.
 ## License
 
 MIT
+
+## No MCP client? Call it over HTTP
+
+```bash
+curl -X POST https://gateway.pipeworx.io/v1/tools/performance_review_generate \
+  -H 'Content-Type: application/json' \
+  -d '{"employee_name":"Sarah Chen","role":"Senior Software Engineer","rating":"rockstar","actual_performance":"Delivered critical microservices migration on schedule, mentored 2 junior engineers, reduced API latency by 40%","what_manager_wants_to_say":"Sarah consistently exceeds expectations and is a key technical leader on the team"}'
+```
+
+No account needed for the first calls. Inspect any tool: `GET https://gateway.pipeworx.io/v1/tools/performance_review_generate`. Find one: `POST https://gateway.pipeworx.io/v1/tools/search_packs` with `{"query":"..."}`.
